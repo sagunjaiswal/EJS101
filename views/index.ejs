@@ -1,0 +1,36 @@
+<html>   
+  <head>
+    <title><%= title%></title>
+  </head>   
+  <body>   
+    <%- include('../template/header')-%>  
+        Hi, I am <%= name %>. 
+        <!--using loop-->
+        <% bullets.forEach((bullet) => { %>
+        <p><%= bullet %></p>
+    <% }) %>
+    <!-- using conditional statement-->
+    <% if(1) { %>
+        <p>This is a conditional statement</p>
+    <% } %>
+        
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sl. No.</th>
+                <th>Common Tags</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tabledata.forEach((e) => { %>
+            <tr>
+                <td><%=e.col1%></td>
+                <td><%=e.col2%></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <%# comment in ejs %>
+    <%- include('../template/footer')-%> 
+  </body> 
+</html>
