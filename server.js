@@ -15,6 +15,7 @@ let items = [
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', function(req, res){    
-    res.render('index',{ title: "<%= EJS100 %>", name: "Sagun", bullets : bullets, tabledata: items});
+    res.render('home',{ tabledata : items , title : "Rendering value into template", name: "Sagun", bullets: bullets});
 });
+
 app.listen(3000);
