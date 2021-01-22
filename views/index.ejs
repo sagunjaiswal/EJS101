@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <!-- using EJS partial -->
+    <%- include('../template/header.ejs')-%>
+
+    <p>Hi, I am <%= name %>.</p>
+    <!--using loop-->
+    <% for(var i = 1 ; i < 3; i++) { %>
+    <p>The condition is still true</p>
+    <% } %>
+    <!-- using conditional statement-->
+    <% if(1) { %>
+    <h3>This h3 tag will be displayed</h3>
+    <% } else { %>
+    <p>This p tag will be displayed</p>
+    <% } %>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sl. No.</th>
+          <th>Common Tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tabledata.forEach((e) => { %>
+        <tr>
+          <td><%=e.col1%></td>
+          <td><%=e.col2%></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <%# comment in EJS %>
+    <!-- using EJS partial -->
+    <%- include('../template/footer')-%>
+  </body>
+</html>
